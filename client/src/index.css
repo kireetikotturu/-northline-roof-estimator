@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-body antialiased transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-onyx text-mist;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+
+  /* Visible keyboard focus everywhere — never suppressed. */
+  :focus-visible {
+    outline: 2px solid #B5541F;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: rgba(181, 84, 31, 0.25);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-copper-500 px-6 py-3
+      font-display text-sm font-medium text-white shadow-glow transition-all duration-200
+      hover:bg-copper-600 hover:-translate-y-0.5 active:translate-y-0
+      disabled:opacity-50 disabled:pointer-events-none disabled:hover:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 dark:border-mist/15
+      bg-transparent px-6 py-3 font-display text-sm font-medium text-ink dark:text-mist
+      transition-all duration-200 hover:border-copper-500/60 hover:text-copper-500
+      disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .card {
+    @apply rounded-2xl border border-ink/[0.06] bg-surface shadow-soft dark:border-mist/[0.08]
+      dark:bg-onyx-card dark:shadow-soft-dark;
+  }
+
+  .field-input {
+    @apply w-full rounded-xl border border-ink/15 bg-surface px-4 py-3 text-ink placeholder:text-ink-soft/50
+      transition-colors duration-150 focus:border-copper-500
+      dark:border-mist/15 dark:bg-onyx-soft dark:text-mist dark:placeholder:text-mist-soft/60;
+  }
+
+  .label-eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.18em] text-copper-500;
+  }
+}
