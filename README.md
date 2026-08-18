@@ -244,7 +244,12 @@ Password: roofing2026!
   confirm the public estimator reflects it immediately in an incognito window.
 - [x] **Auth Check** — `/api/admin/*` returns `401` without a valid Bearer token;
   the `/admin` frontend route redirects to `/admin/login` when unauthenticated.
-- [ ] **Repo Hygiene Check** — commit progressively as you customize this rather than
-  in one bulk commit before submitting.
+- [ ] **Repo Hygiene Check** — this repo ships with a logical, incremental commit
+  history (one commit per feature area: server models → engine → API → seed → client
+  scaffold → theming → wizard → owner panel → docs) as a sensible starting point, but
+  it was all committed in one local session, so the timestamps are close together.
+  Once you clone this into your own working copy, make your **own** real commits as
+  you review, test, customize, and fix things — that ongoing history is what actually
+  satisfies "progressive commits over time" for submission.
 - [x] **Mandatory Files Check** — `DECISIONS.md`, `AI_LOG.md`, `README.md` are all
   present at the repo root.
