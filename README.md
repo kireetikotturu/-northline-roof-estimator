@@ -308,7 +308,7 @@ Run them separately with `npm run dev:server` and `npm run dev:client` if prefer
 
 ```
 Username: admin
-Password: roofing2026!
+Password: roofing2026
 ```
 (Defined in `server/.env` on your own deployment — change before sharing publicly.)
 
